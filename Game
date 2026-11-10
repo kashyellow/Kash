@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#10 Striker Journal - 【entity-Messi¦canonical_name=Messi】 Inspired</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#f8f9fb;color:#0a1931}
+.header{background:#0a1931;color:white;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.header h1{font-family:'Bebas Neue';letter-spacing:2px;font-size:28px}
+.header h1 span{color:#d4af37}
+.badge{padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700}
+.badge.owner{background:#d4af37;color:#0a1931}
+.badge.view{background:#333;color:#ccc}
+.btn{padding:10px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn-gold{background:#d4af37;color:#0a1931}
+.btn-dark{background:#0a1931;color:white}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;min-height:520px;background:#0a1931}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,25,49,.95),rgba(10,25,49,.2));display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:white}
+.hero-overlay h2{font-family:'Bebas Neue';font-size:64px;line-height:.9}
+.hero-overlay h2 span{color:#d4af37}
+.hero-anim{background:#0f2a52;display:flex;flex-direction:column;padding:24px;color:white;justify-content:center}
+.field{width:100%;height:220px;background:linear-gradient(#1a7a3a,#0f5d2f);border:3px solid white;border-radius:12px;position:relative;overflow:hidden;margin:16px 0}
+.goal{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:60px;height:120px;border:3px solid white;border-left:0;background:rgba(255,255,255,.15)}
+.ball{position:absolute;left:30px;top:50%;width:22px;height:22px;background:white;border-radius:50%;animation:shoot 2.2s infinite}
+@keyframes shoot{0%{left:30px;top:55%}35%{left:75%;top:45%}70%{left:85%;top:52%}100%{left:85%;top:52%}}
+.player{position:absolute;left:10px;top:45%;font-size:32px;animation:kick 2.2s infinite}
+@keyframes kick{0%,100%{transform:rotate(0)}30%{transform:rotate(-20deg)}}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:20px;background:white}
+.stat{padding:16px;border-radius:14px;background:#f3f4f6;text-align:center;border:2px solid #e5e7eb}
+.stat b{font-size:28px;display:block}
+.stat span{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666}
+.section{padding:32px 24px;max-width:1100px;margin:auto}
+.section h3{font-family:'Bebas Neue';font-size:36px;margin-bottom:16px}
+.messi-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border-radius:16px;overflow:hidden;background:white;border:2px solid #e5e7eb;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card .p{padding:14px}
+.timeline{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
+.timeline .card{min-width:220px}
+.form{background:white;border-radius:18px;padding:20px;border:2px solid #0a1931;margin-top:16px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1.5px solid #ddd;font-family:Inter}
+.entry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:16px}
+.entry{border-radius:16px;padding:16px;background:white;border-left:6px solid #d4af37;position:relative}
+.entry .num{position:absolute;top:10px;right:12px;font-family:'Bebas Neue';font-size:28px;color:#d4af37;opacity:.7}
+.view-banner{background:#fff3cd;border:2px dashed #d4af37;padding:12px;border-radius:10px;margin-bottom:12px;text-align:center;font-weight:600}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.messi-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>⚽ <span>#10</span> STRIKER JOURNAL</h1>
+<div style="display:flex;gap:10px;align-items:center">
+<span id="modeBadge" class="badge view">🔒 View Only</span>
+<button class="btn btn-gold" id="lockBtn">Enter Password</button>
+</div>
+</div>
+
+<div class="hero">
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1574629810360-214f45ff69b4?w=800" id="heroKid" alt="#10 striker - REPLACE WITH YOUR SON'S #10 PHOTO">
+<div class="hero-overlay">
+<h2>MY JOURNEY<br>TO BE LIKE<br><span>MESSI</span> #10</h2>
+<p style="margin-top:10px">Striker • Number 10 • Age 12 • Idol: Messi</p>
+</div>
+</div>
+<div class="hero-anim">
+<h3 style="font-family:Bebas Neue;font-size:32px">GOAL ANIMATION</h3>
+<div class="field"><div class="goal"></div><div class="player">🦵</div><div class="ball"></div></div>
+<p>Your kicking video loops here. For Vercel, upload your MP4 to /public/goal.mp4 and add: &lt;video src="/goal.mp4" autoplay muted loop&gt;</p>
+</div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="section">
+<div id="viewBanner" class="view-banner">👀 Friends can view but can't edit. Owner login to add progress.</div>
+<h3>🌟 My Idol - 【entity-Leo Messi¦canonical_name=Leo Messi】 #10</h3>
+<div class="【entity-messi¦canonical_name=Messi】-grid">
+<div class="card"><img src="https://usercontent1.hubstatic.com/17588612_f520.jpg"><div class="p"><b>【entity-Messi¦canonical_name=Messi】 Argentina #10</b><br><small>World Cup winner 2022 - my dream</small></div></div>
+<div class="card"><img src="https://d1v5b45xd905zm.cloudfront.net/images2/4/b/1/e/5/4b1e5f9e-93d3-3def-8f74-88bb48dc99c9-1280x852.jpg"><div class="p"><b>The Celebration</b><br><small>Arms wide - heart for the team</small></div></div>
+</div>
+</div>
+
+<div class="section">
+<h3>🏆 Historic Moments</h3>
+<div class="timeline">
+<div class="card"><img src="https://icdn.cultofcalcio.com/wp-content/uploads/2022/11/Brazile_Italy_1982-1024x613.png"><div class="p"><b>1986 Maradona</b> Goal of Century</div></div>
+<div class="card"><div style="height:120px;background:#ffcc00;display:flex;align-items:center;justify-content:center;font-size:40px">👑</div><div class="p"><b>1970 Pele</b> Beautiful Game</div></div>
+<div class="card"><img src="https://usercontent1.hubstatic.com/17588612_f520.jpg"><div class="p"><b>2022 【entity-Messi¦canonical_name=Messi】</b> Wins World Cup</div></div>
+<div class="card"><div style="height:120px;background:#e91e63;display:flex;align-items:center;justify-content:center">⚽️</div><div class="p"><b>1999 Women's WC</b> Iconic moment</div></div>
+</div>
+</div>
+
+<div class="section" id="formSection">
+<h3>📓 Progress Tracker (Owner Only)</h3>
+<div class="form" id="entryForm">
+<div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<input type="date" id="fDate">
+<select id="fType"><option>Match</option><option>Training</option><option>Goal Review</option></select>
+<input placeholder="Opponent / Focus" id="fOpp">
+<input type="number" placeholder="Minutes" id="fMin">
+<input type="number" placeholder="Goals" id="fGoals">
+<input type="number" placeholder="Assists" id="fAssists">
+<input type="number" placeholder="Shots on Target" id="fShots">
+<select id="fMood"><option>🔥 On Fire</option><option>🙂 Good</option><option>😤 Frustrated</option><option>😮‍💨 Tired proud</option></select>
+<select id="fRating"><option value="5">Rating 5</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10 Messi!</option></select>
+<textarea placeholder="What I did well - like Messi?" id="fGood"></textarea>
+<textarea placeholder="What to improve" id="fImprove"></textarea>
+</div>
+<button class="btn btn-gold" id="saveBtn" style="margin-top:12px">Save Entry</button>
+<button class="btn btn-dark" id="cancelBtn" style="display:none">Cancel</button>
+<button class="btn" id="exportBtn" style="float:right">Export JSON</button>
+</div>
+<div class="entry-grid" id="entries"></div>
+</div>
+
+<script>
+let isOwner=false,editId=null;
+const pwKey='striker10_pw',dataKey='striker10_entries';
+function updateMode(){
+ document.getElementById('modeBadge').textContent=isOwner?'🔓 Owner Mode':'🔒 View Only';
+ document.getElementById('modeBadge').className='badge '+(isOwner?'owner':'view');
+ document.getElementById('viewBanner').style.display=isOwner?'none':'block';
+ document.getElementById('lockBtn').textContent=isOwner?'Lock':'Enter Password';
+ render();
+}
+document.getElementById('lockBtn').onclick=()=>{
+ if(isOwner){isOwner=false;updateMode();return;}
+ let pw=localStorage.getItem(pwKey);
+ if(!pw){let np=prompt('Set owner password:');if(np){localStorage.setItem(pwKey,np);isOwner=true;}}
+ else{let ep=prompt('Enter password:');if(ep===pw)isOwner=true;else alert('Wrong password - view only');}
+ updateMode();
+};
+function load(){return JSON.parse(localStorage.getItem(dataKey)||'[]')}
+function save(d){localStorage.setItem(dataKey,JSON.stringify(d))}
+function render(){
+ let data=load();
+ let s=document.getElementById('stats');
+ let goals=data.reduce((a,b)=>a+(+b.goals||0),0);
+ let assists=data.reduce((a,b)=>a+(+b.assists||0),0);
+ let avg=data.length?(data.reduce((a,b)=>a+(+b.rating||0),0)/data.length).toFixed(1):0;
+ let shots=data.reduce((a,b)=>a+(+b.shots||0),0);
+ s.innerHTML=`<div class="stat"><b>${data.length}</b><span>Logs</span></div><div class="stat"><b>${goals}</b><span>Goals</span></div><div class="stat"><b>${assists}</b><span>Assists</span></div><div class="stat"><b>${avg}</b><span>Avg Rating</span></div><div class="stat"><b>${shots}</b><span>Shots</span></div>`;
+ let grid=document.getElementById('entries');
+ grid.innerHTML=data.slice().reverse().map(e=>`<div class="entry"><div class="num">10</div><small>${e.date} • ${e.type}</small><br><b>${e.opponent}</b><br>⚽ ${e.goals} 🎯 ${e.assists} ⏱️ ${e.minutes}m<br>Rating: ${'⭐'.repeat(e.rating||5)}<br><small>${e.good||''}</small><br>${isOwner?`<button onclick="editEntry('${e.id}')">Edit</button> <button onclick="delEntry('${e.id}')">Delete</button>`:''}</div>`).join('');
+}
+document.getElementById('saveBtn').onclick=()=>{
+ let obj={id:editId||Date.now().toString(),date:document.getElementById('fDate').value||new Date().toISOString().split('T')[0],type:document.getElementById('fType').value,opponent:document.getElementById('fOpp').value,minutes:document.getElementById('fMin').value,goals:document.getElementById('fGoals').value,assists:document.getElementById('fAssists').value,shots:document.getElementById('fShots').value,mood:document.getElementById('fMood').value,rating:document.getElementById('fRating').value,good:document.getElementById('fGood').value,improve:document.getElementById('fImprove').value};
+ let data=load();if(editId){let i=data.findIndex(x=>x.id===editId);data[i]=obj;editId=null;}else data.push(obj);save(data);render();
+};
+window.editEntry=(id)=>{let e=load().find(x=>x.id===id);editId=id;Object.keys(e).forEach(k=>{let el=document.getElementById('f'+k.charAt(0).toUpperCase()+k.slice(1));if(el)el.value=e[k]});document.getElementById('fDate').value=e.date;document.getElementById('fType').value=e.type;document.getElementById('fOpp').value=e.opponent;};
+window.delEntry=(id)=>{if(confirm('Delete?')){save(load().filter(x=>x.id!==id));render();}};
+document.getElementById('fDate').value=new Date().toISOString().split('T')[0];
+render();
+</script>
+</body>
+</html>
